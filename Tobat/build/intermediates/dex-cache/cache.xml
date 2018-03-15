@@ -3,21 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.volley/volley/1.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-26.0.0-alpha1_f63fcf2b87f9654328f66e70e309f49907477440/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-26.0.0-alpha1_d1f54739c1bc0433e26bb18b31531a6ec1bd93f4/classes.dex" />
+        sha1="9bdfc3e83c6bc1f8bc5807cdaf7e94ac884a2a0d">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.1.0_9638d934fe98e31d51a51643f13ec44a11a36035/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,21 +21,66 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="959a463b5815f34c1bae74f4390b0c4991c20064">
-        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_66396c871266fa766ac72cc09e91a97dc90c71f9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
         <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-26.0.0-alpha1_b71ab1f37a5b7fa1e656bb37c0bc60ae4a29585d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/transition/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-26.0.0-alpha1_5987f8ef1a5fcfefd87ad832de171ad308185122/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-26.0.0-alpha1_aaf5527f7008d132c82948fa606390fc00beaed2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/design/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-26.0.0-alpha1_bc11e4158d83b1405aa91014d3506db0ad70c2c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ac89031c05cfff00ca872e8d1368ca5bc888f588">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c82bfad7e4540317742123ba194f90e3c0223ccf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-26.0.0-alpha1_d1f54739c1bc0433e26bb18b31531a6ec1bd93f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-26.0.0-alpha1_db2b4b4ba8924b276112e386dc50d04bac6d30ad/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,30 +102,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-26.0.0-alpha1_f63fcf2b87f9654328f66e70e309f49907477440/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="877abbad7d255b19687caba12ef3dbc0f65abeef">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_66396c871266fa766ac72cc09e91a97dc90c71f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-26.0.0-alpha1_6afa1009884a13b18295517b70219aac74ebec5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
         <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-26.0.0-alpha1_ef1fc7534cc318cf0bafb9e38b160366c390c40c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="518da6a27a5d2d1a5460e823d6456ad81fc1d7e9">
-        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c82bfad7e4540317742123ba194f90e3c0223ccf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="/Users/Augustin.dlt/Documents/Cours/PPE/Tobat/android/Tobat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-26.0.0-alpha1_aaf5527f7008d132c82948fa606390fc00beaed2/classes.dex" />
     </item>
     <item
         is-multidex="true"
