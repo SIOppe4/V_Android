@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Client;
 
 /**
@@ -44,8 +46,6 @@ public class ClientListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_list_activity);
-
-        requestQ = Volley.newRequestQueue(this);
 
         clients = new ArrayList<Client>();
 
@@ -73,11 +73,11 @@ public class ClientListActivity extends AppCompatActivity {
             }
         });
 
-        this.parseJSON();
+        this.setClientsList();
     };
 
     public void addClient(View v){
-        parseJSON();
+
     }
 
     public void addClients(View v){
@@ -114,47 +114,20 @@ public class ClientListActivity extends AppCompatActivity {
 
     }
 
-    private void parseJSON() {
-        String url = "http://augustin.jpage.eu/tobat/clients.json";
+    public void onResume(){
+        this.setClientsList();
+        super.onResume();
+    }
 
+    private void setClientsList(){
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("clients");
-
-
-                            for (int i = 0; i < jsonArray.length(); i++){
-
-                                JSONObject clientJson = jsonArray.getJSONObject(i);
-                                String nom = clientJson.getString("nom");
-                                String prenom = clientJson.getString("prenom");
-                                String email = clientJson.getString("email");
-                                String tel = clientJson.getString("tel");
-                                String adresse = clientJson.getString("adresse");
-
-                                clients.add(new Client(nom, prenom, adresse, email, tel));
-                                listAdapter.notifyDataSetChanged();
-
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Log.i("Info-Aug", "Erreur ");
-
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        new ClientManager.all() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-
-                Log.i("Info-Aug", "Erreur co");
-
+            protected void getClients(ArrayList<Client> c) {
+                clients.clear();
+                clients.addAll(c);
+                listAdapter.notifyDataSetChanged();
             }
-        });
-
-        requestQ.add(request);
+        };
     }
 }

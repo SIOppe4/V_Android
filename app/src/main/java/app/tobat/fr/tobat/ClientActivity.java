@@ -1,8 +1,13 @@
 package app.tobat.fr.tobat;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import app.tobat.fr.tobat.Model.Client;
@@ -36,6 +41,27 @@ public class ClientActivity extends AppCompatActivity {
 
         TextView adresse = (TextView) findViewById(R.id.adresse_client);
         adresse.setText(client.getAdresse());
+
+        Button addBoat = (Button) findViewById(R.id.add_ship_btn);
+
+        CharSequence colors[] = new CharSequence[] {"La mouette", "Le Prius", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny"};
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Choisir un Bateau");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+            }
+        });
+
+        addBoat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                builder.show();
+            }
+        });
 
     }
 }

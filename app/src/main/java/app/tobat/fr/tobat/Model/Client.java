@@ -1,6 +1,15 @@
 package app.tobat.fr.tobat.Model;
 
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+
+import app.tobat.fr.tobat.Manager.API;
 
 /**
  * Created by Augustin.dlt on 22/03/2018.
@@ -13,13 +22,17 @@ public class Client implements Serializable {
     private String adresse;
     private String email;
     private String tel;
+    private String commentaire;
 
-    public Client(String nom, String prenom, String adresse, String email, String tel) {
+    private static ArrayList<Client> clients_list;
+
+    public Client(String nom, String prenom, String adresse, String email, String tel, String commentaire) {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.email = email;
         this.tel = tel;
+        this.commentaire = commentaire;
     }
 
     public String getNom() {
@@ -61,5 +74,14 @@ public class Client implements Serializable {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
+
 
 }

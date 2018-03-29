@@ -28,7 +28,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_marginBottom="45dp"
-                    android:src="@drawable/ic_client"
+                    app:srcCompat="@drawable/ic_client"
                     />
 
 
@@ -95,7 +95,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_email"/>
+                        app:srcCompat="@drawable/ic_email"/>
 
                     <TextView
                         android:id="@+id/email_client"
@@ -141,7 +141,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_contacts"/>
+                        app:srcCompat="@drawable/ic_contacts"/>
 
                     <TextView
                         android:id="@+id/adresse_client"
@@ -150,6 +150,29 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="12dp"
                         android:text="12 rue des filles Dieu\n49 100 ANGERS"/>
+                </LinearLayout>
+
+                <!-- Commentaire -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/ic_comment"/>
+
+                    <TextView
+                        android:id="@+id/commentaire_client"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:text="Lorem Ipsum"/>
                 </LinearLayout>
 
                 <!-- Les Bateaux -->
@@ -173,7 +196,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:layout_marginBottom="70dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="horizontal"
                     android:weightSum="3">
 
@@ -289,6 +312,24 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <Button
+                        android:id="@+id/add_ship_btn"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#fff"
+                        android:text="Ajouter un Bateau"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </ScrollView>
@@ -301,6 +342,6 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         app:backgroundTint="@color/startBlue"
-        android:src="@drawable/ic_edit" />
+        app:srcCompat="@drawable/ic_edit" />
 
 </android.support.design.widget.CoordinatorLayout>
