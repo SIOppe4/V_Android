@@ -17,6 +17,7 @@ import app.tobat.fr.tobat.Manager.API;
 
 public class Client implements Serializable {
 
+    private int id;
     private String nom;
     private String prenom;
     private String adresse;
@@ -24,15 +25,17 @@ public class Client implements Serializable {
     private String tel;
     private String commentaire;
 
-    private static ArrayList<Client> clients_list;
+    private ArrayList<Bateau> bateaux;
 
-    public Client(String nom, String prenom, String adresse, String email, String tel, String commentaire) {
+    public Client(int id,String nom, String prenom, String adresse, String email, String tel, String commentaire) {
+        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.email = email;
         this.tel = tel;
         this.commentaire = commentaire;
+        this.bateaux = new ArrayList<Bateau>();
     }
 
     public String getNom() {
@@ -82,6 +85,12 @@ public class Client implements Serializable {
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
+
+    public ArrayList<Bateau> getBateaux() { return this.bateaux; }
+
+    public void setBateaux(ArrayList<Bateau> bateaux) { this.bateaux = bateaux; }
+
+    public void addBateau(Bateau b) { this.bateaux.add(b); }
 
 
 }

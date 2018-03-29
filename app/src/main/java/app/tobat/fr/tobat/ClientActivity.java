@@ -42,6 +42,9 @@ public class ClientActivity extends AppCompatActivity {
         TextView adresse = (TextView) findViewById(R.id.adresse_client);
         adresse.setText(client.getAdresse());
 
+        TextView commentaire = (TextView) findViewById(R.id.commentaire_client);
+        commentaire.setText(client.getCommentaire());
+
         Button addBoat = (Button) findViewById(R.id.add_ship_btn);
 
         CharSequence colors[] = new CharSequence[] {"La mouette", "Le Prius", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny"};
