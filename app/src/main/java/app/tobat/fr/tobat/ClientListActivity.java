@@ -6,28 +6,18 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import app.tobat.fr.tobat.Adapter.ClientListAdapter;
 import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Client;
 
@@ -40,7 +30,6 @@ public class ClientListActivity extends AppCompatActivity {
     ClientListAdapter listAdapter;
     ArrayList<Client> clients;
     String m_Text;
-    private RequestQueue requestQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +40,7 @@ public class ClientListActivity extends AppCompatActivity {
 
         ListView lvClients = (ListView) findViewById(R.id.list_clients);
 
-        listAdapter = new ClientListAdapter(this, R.layout.item, clients);
+        listAdapter = new ClientListAdapter(this, R.layout.client_list_item, clients);
 
         lvClients.setAdapter(listAdapter);
 

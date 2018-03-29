@@ -1,15 +1,19 @@
 package app.tobat.fr.tobat;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import app.tobat.fr.tobat.Manager.BateauManager;
+import app.tobat.fr.tobat.Model.Bateau;
 import app.tobat.fr.tobat.Model.Client;
 
 /**
@@ -18,15 +22,54 @@ import app.tobat.fr.tobat.Model.Client;
 
 public class ClientActivity extends AppCompatActivity {
     private Client client;
+    private ArrayList<Bateau> bateaux_list;
+    private AlertDialog.Builder builder_list_bat;
+    private CharSequence bateaux_list_char_bat[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         client = (Client)intent.getSerializableExtra("client");
+        bateaux_list = new ArrayList<Bateau>();
+        builder_list_bat = new AlertDialog.Builder(this);
 
         setContentView(R.layout.client_activity);
 
+        putInfoClientToView();
+
+    }
+
+    protected void showCHooseListBateaux(View v){
+
+        Log.i("TEXT", "ON CLICK");
+
+        new BateauManager.all() {
+            @Override
+            protected void getBateaux(ArrayList<Bateau> b) {
+
+                ArrayList<String> strs = new ArrayList<String>();
+                for(Bateau bat : b) {
+                    strs.add(bat.getNom());
+                }
+
+                bateaux_list_char_bat = strs.toArray(new CharSequence[strs.size()]);
+                Log.i("BATEAUX", String.valueOf(b.size()));
+                builder_list_bat.setTitle("Choisir un Bateau");
+                builder_list_bat.setItems(bateaux_list_char_bat, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                builder_list_bat.show();
+            }
+        };
+
+    }
+
+    private void putInfoClientToView(){
         TextView prenom = (TextView) findViewById(R.id.prenom_client);
         prenom.setText(client.getPrenom());
 
@@ -44,27 +87,5 @@ public class ClientActivity extends AppCompatActivity {
 
         TextView commentaire = (TextView) findViewById(R.id.commentaire_client);
         commentaire.setText(client.getCommentaire());
-
-        Button addBoat = (Button) findViewById(R.id.add_ship_btn);
-
-        CharSequence colors[] = new CharSequence[] {"La mouette", "Le Prius", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny", "Le Lapin Vollant", "black Kenny"};
-
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle("Choisir un Bateau");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // the user clicked on colors[which]
-            }
-        });
-
-        addBoat.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                builder.show();
-            }
-        });
-
     }
 }

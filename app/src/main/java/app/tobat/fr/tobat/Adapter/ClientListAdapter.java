@@ -1,4 +1,4 @@
-package app.tobat.fr.tobat;
+package app.tobat.fr.tobat.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.tobat.fr.tobat.Model.Client;
+import app.tobat.fr.tobat.R;
 
 /**
  * Created by Augustin.dlt on 22/03/2018.

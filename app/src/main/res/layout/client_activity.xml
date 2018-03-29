@@ -326,6 +326,7 @@
                         android:textColor="#fff"
                         android:text="Ajouter un Bateau"
                         android:layout_marginBottom="10dp"
+                        android:onClick="showCHooseListBateaux"
                         />
 
                 </LinearLayout>
