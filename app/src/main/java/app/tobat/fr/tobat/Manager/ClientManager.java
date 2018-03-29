@@ -58,6 +58,6 @@ public class ClientManager {
         }
         protected abstract void getClients(ArrayList<Client> c);
     };
-    
+
 
 }
