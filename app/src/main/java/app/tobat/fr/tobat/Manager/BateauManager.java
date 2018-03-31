@@ -24,7 +24,7 @@ public class BateauManager {
             final ArrayList<Bateau> bateaux_list = new ArrayList<Bateau>();
             final BateauManager.all manager = this;
 
-            new API("bateaux", Request.Method.GET) {
+            new API("bateaux", Request.Method.GET, null) {
                 @Override
                 public void receptData(JSONObject datas) {
                     try {
@@ -34,7 +34,7 @@ public class BateauManager {
                         Bateau bateau;
 
                         int id, annee_bat;
-                        String dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat;
+                        String dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat, img_bat;
                         JSONObject bateauJson;
 
 
@@ -48,8 +48,9 @@ public class BateauManager {
                             etat_bat = bateauJson.getString("etat");
                             modele_bat = bateauJson.getString("modele");
                             prix_bat = bateauJson.getString("prix");
+                            img_bat = bateauJson.getString("img");
 
-                            bateau = new Bateau(id, annee_bat, dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat);
+                            bateau = new Bateau(id, annee_bat, dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat, img_bat);
 
                             Log.i("CHARGE", "Bateau " + bateau.getNom());
 

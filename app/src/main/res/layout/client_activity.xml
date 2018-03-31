@@ -172,7 +172,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="12dp"
-                        android:text="Lorem Ipsum"/>
+                        android:text="Lorem Ipsum"
+                        android:onClick="changeCommentToClient"/>
                 </LinearLayout>
 
                 <!-- Les Bateaux -->
@@ -192,7 +193,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+                <!-- <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
@@ -310,7 +311,23 @@
                     </LinearLayout>
 
 
-                </LinearLayout>
+                </LinearLayout> -->
+
+                <GridView
+                    android:id="@+id/client_bateaux_list"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="3"
+                    android:verticalSpacing="1dp"
+                    android:horizontalSpacing="17dp"
+                    android:stretchMode="columnWidth"
+                    android:listSelector="@android:color/transparent"
+                    android:gravity="center"/>
+
 
                 <LinearLayout
                     android:layout_height="wrap_content"

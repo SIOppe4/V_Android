@@ -32,7 +32,7 @@ public abstract class API  {
     }
 
 
-    public API(String prefixUrl, int method){
+    public API(String prefixUrl, int method, JSONObject jsonToSend){
 
         String url = API.url + prefixUrl;
 
@@ -40,7 +40,8 @@ public abstract class API  {
 
         final API api = this;
 
-        JsonObjectRequest request = new JsonObjectRequest(method, url, null,
+
+        JsonObjectRequest request = new JsonObjectRequest(method, url, jsonToSend,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {

@@ -14,8 +14,9 @@ public class Bateau implements Serializable {
     private String modele;
     private String nom;
     private String prix;
+    private String img;
 
-    public Bateau(int id, int annee, String dimentions, String etat, String modele, String nom, String prix){
+    public Bateau(int id, int annee, String dimentions, String etat, String modele, String nom, String prix, String img){
         this.id = id;
         this.annee = annee;
         this.dimentions = dimentions;
@@ -23,6 +24,7 @@ public class Bateau implements Serializable {
         this.modele = modele;
         this.nom = nom;
         this.prix = prix;
+        this.img = img;
     }
 
     public int getId() {
@@ -79,5 +81,13 @@ public class Bateau implements Serializable {
 
     public void setPrix(String prix) {
         this.prix = prix;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

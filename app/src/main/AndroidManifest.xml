@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClientActivity" />
+        <activity android:name=".ClientActivity" android:parentActivityName=".ClientActivity"/>
+        <activity android:name=".BateauActivity" android:parentActivityName=".BateauListActivity"/>
+        <activity android:name=".BateauListActivity" />
     </application>
 
 </manifest>

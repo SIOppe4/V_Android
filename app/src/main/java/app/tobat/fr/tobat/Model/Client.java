@@ -93,4 +93,11 @@ public class Client implements Serializable {
     public void addBateau(Bateau b) { this.bateaux.add(b); }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

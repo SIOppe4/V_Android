@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import com.android.volley.RequestQueue;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,12 +36,13 @@ public class ClientListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_list_activity);
+        setTitle("Liste des clients");
 
         clients = new ArrayList<Client>();
 
         ListView lvClients = (ListView) findViewById(R.id.list_clients);
 
-        listAdapter = new ClientListAdapter(this, R.layout.client_list_item, clients);
+        listAdapter = new ClientListAdapter(this, R.layout.list_item, clients);
 
         lvClients.setAdapter(listAdapter);
 
@@ -50,8 +52,6 @@ public class ClientListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
-                TextView text = (TextView)view.findViewById(R.id.nom_client);
 
                 Intent ClientIntent = new Intent(ClientListActivity.this, ClientActivity.class);
 
@@ -118,5 +118,20 @@ public class ClientListActivity extends AppCompatActivity {
                 listAdapter.notifyDataSetChanged();
             }
         };
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bateau, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        startActivity(new Intent(ClientListActivity.this, BateauListActivity.class));
+
+        return true;
     }
 }
