@@ -286,7 +286,6 @@
 
                     </LinearLayout>
 
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -296,11 +295,13 @@
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        app:backgroundTint="@color/startBlue"
-        android:src="@drawable/ic_edit" />
+        android:src="@drawable/ic_edit"
+        android:onClick="goToUpdateClient"
+        app:backgroundTint="@color/startBlue" />
 
 </android.support.design.widget.CoordinatorLayout>
