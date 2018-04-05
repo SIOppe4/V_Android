@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grayLight"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/nom"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Nom"
+            android:paddingLeft="10dp"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/prenom"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+
+            android:paddingLeft="10dp"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/mail"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Mail"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/tel"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Téléphone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/adresse"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Adresse"
+            android:paddingLeft="10dp"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/ville"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Ville"
+            android:paddingLeft="10dp"
+            android:textSize="22dp" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:onClick="recupererValeurs"
+            android:text="Modifier" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,36 +1,25 @@
 package app.tobat.fr.tobat;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.zip.Inflater;
-
 import app.tobat.fr.tobat.Adapter.ClientBateauxListAdapter;
 import app.tobat.fr.tobat.Manager.BateauManager;
 import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Bateau;
+
+
 import app.tobat.fr.tobat.Model.Client;
 
 /**
@@ -48,6 +37,8 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+
+        client = (Client)intent.getSerializableExtra("client");
 
         setContentView(R.layout.client_activity);
         setTitle("Fiche client");
@@ -212,4 +203,11 @@ public class ClientActivity extends AppCompatActivity {
 
     }
 
+
+    public void goToUpdateClient(View v){
+        Log.i("INFO MAX", "Clicked floating button");
+        Intent intent = new Intent (getApplicationContext(), UpdateClientActivity.class);
+        intent.putExtra("client",(Serializable) client);
+        startActivity(intent);
+    }
 }

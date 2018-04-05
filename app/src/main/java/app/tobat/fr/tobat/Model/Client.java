@@ -21,6 +21,7 @@ public class Client implements Serializable {
     private String nom;
     private String prenom;
     private String adresse;
+    private String ville;
     private String email;
     private String tel;
     private String commentaire;
@@ -99,5 +100,13 @@ public class Client implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 }
