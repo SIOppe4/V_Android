@@ -25,17 +25,22 @@ public class Client implements Serializable {
     private String email;
     private String tel;
     private String commentaire;
+    private String cp;
+    private String adresse_ln;
 
     private ArrayList<Bateau> bateaux;
 
-    public Client(int id,String nom, String prenom, String adresse, String email, String tel, String commentaire) {
+    public Client(int id,String nom, String prenom, String adresse, String adresse_ln, String email, String tel, String commentaire, String ville , String cp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
+        this.adresse_ln = adresse_ln;
         this.email = email;
         this.tel = tel;
         this.commentaire = commentaire;
+        this.ville = ville;
+        this.cp = cp;
         this.bateaux = new ArrayList<Bateau>();
     }
 
@@ -83,16 +88,13 @@ public class Client implements Serializable {
         return commentaire;
     }
 
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
-    }
+    public void setCommentaire(String commentaire) { this.commentaire = commentaire; }
 
     public ArrayList<Bateau> getBateaux() { return this.bateaux; }
 
     public void setBateaux(ArrayList<Bateau> bateaux) { this.bateaux = bateaux; }
 
     public void addBateau(Bateau b) { this.bateaux.add(b); }
-
 
     public int getId() {
         return id;
@@ -102,11 +104,19 @@ public class Client implements Serializable {
         this.id = id;
     }
 
-    public String getVille() {
-        return ville;
+    public String getVille() { return ville; }
+
+    public void setVille(String ville) { this.ville = ville; }
+
+    public String getCp() { return cp; }
+
+    public void setCp(String cp) {
+        this.cp = cp;
     }
 
-    public void setVille(String ville) {
-        this.ville = ville;
+    public String getAdresse_ln() { return adresse_ln; }
+
+    public void setAdresse_ln(String adresse_ln) {
+        this.adresse_ln = adresse_ln;
     }
 }

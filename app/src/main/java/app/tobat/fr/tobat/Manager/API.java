@@ -17,7 +17,7 @@ import org.json.JSONObject;
  */
 
 public abstract class API  {
-    static String url = "http://172.20.10.2:8000/";
+    static String url = "http://tobat.cleverapps.io/";
     static RequestQueue requestQueue = null;
 
     public abstract void receptData(JSONObject datas);
