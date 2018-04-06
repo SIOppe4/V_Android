@@ -83,22 +83,27 @@ public class UpdateClientActivity extends AppCompatActivity{
         EditText adress_lnV = (EditText) findViewById(R.id.adresse_ln);
 
         nom=nomV.getText().toString();
-        client.setNom(nom);
         prenom=prenomV.getText().toString();
-        client.setPrenom(prenom);
         mail=mailV.getText().toString();
-        client.setEmail(mail);
         tel=telV.getText().toString();
-        client.setTel(tel);
         adresse=adresseV.getText().toString();
-        client.setAdresse(adresse);
         cp=cpV.getText().toString();
-        client.setCp(cp);
         ville=villeV.getText().toString();
-        client.setVille(ville);
         adresse_ln=adress_lnV.getText().toString();
-        client.setAdresse_ln(adresse_ln);
 
-        envoyerValeurs();
+        if (nom.isEmpty() || prenom.isEmpty() || mail.isEmpty() || tel.isEmpty() || adresse.isEmpty() || cp.isEmpty() || ville.isEmpty()){
+            Toast.makeText(UpdateClientActivity.this, "Merci de remplir les champs", Toast.LENGTH_LONG).show();
+        }
+        else {
+            client.setNom(nom);
+            client.setPrenom(prenom);
+            client.setEmail(mail);
+            client.setTel(tel);
+            client.setAdresse(adresse);
+            client.setCp(cp);
+            client.setVille(ville);
+            client.setAdresse_ln(adresse_ln);
+            envoyerValeurs();
+        }
     }
 }
