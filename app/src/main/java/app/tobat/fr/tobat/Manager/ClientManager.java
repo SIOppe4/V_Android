@@ -171,4 +171,46 @@ public class ClientManager {
         return client;
     };
 
+    public abstract static class newClient{
+
+        public newClient(Client c) {
+
+            String nom = setNom();
+
+
+            try {
+                JSONObject json = new JSONObject();
+                json.put("nom", nom);
+                json.put("prenom", prenom);
+                json.put("mail", mail);
+                json.put("adresse", adresse);
+                json.put("adresseLn", adresseLn);
+                json.put("ville", ville);
+                json.put("cp", cp);
+                json.put("commentaire", commentaire);
+                json.put("telephone", telephone);
+
+                new API("new/client", Request.Method.POST, json) {
+                    @Override
+                    public void receptData(JSONObject datas) {
+                        try {
+                            getClient(JSONObjectToClient(datas));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.i("Info-Aug", "Erreur ");
+                        }
+                    }
+                };
+
+            }catch (JSONException e){
+                e.printStackTrace();
+                Log.i("Info-Aug", "Erreur ");
+            }
+
+        }
+
+    }
+
+
+
 }
