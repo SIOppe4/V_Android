@@ -125,6 +125,36 @@ public class ClientManager {
 
     }
 
+    public abstract static class updateClient{
+
+        public updateClient(Client c) {
+
+            try {
+                JSONObject json = ClientManager.ClientToJSONObject(c);
+
+                new API("client/" + c.getId() + "/update", Request.Method.POST, json) {
+                    @Override
+                    public void receptData(JSONObject datas) {
+                        try {
+                            getClient(JSONObjectToClient(datas));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.i("Info-Aug", "Erreur ");
+                        }
+                    }
+                };
+
+            }catch (JSONException e){
+                e.printStackTrace();
+                Log.i("Info-Aug", "Erreur ");
+            }
+
+        }
+
+        protected abstract void getClient(Client c);
+
+    }
+
     static Client JSONObjectToClient(JSONObject client_json) throws JSONException {
 
         Client client;
@@ -140,11 +170,14 @@ public class ClientManager {
         String email = client_json.getString("email");
         String tel = client_json.getString("tel");
         String adresse = client_json.getString("adresse");
+        String ville = client_json.getString("ville");
         String commentaire = client_json.getString("commentaire");
+        String cp = client_json.getString("cp");
+        String adresse_ln = client_json.getString("adresseLn");
 
         JSONArray bateauxJSON = client_json.getJSONArray("bateau");
 
-        client = new Client(id, nom, prenom, adresse, email, tel, commentaire);
+        client = new Client(id, nom, prenom, adresse, adresse_ln, email, tel, commentaire, ville, cp);
 
         for (int j = 0; j < bateauxJSON.length(); j++){
 
@@ -170,5 +203,20 @@ public class ClientManager {
 
         return client;
     };
+
+    static JSONObject ClientToJSONObject(Client c) throws JSONException {
+        JSONObject client_json = new JSONObject();
+        client_json.put("nom", c.getNom());
+        client_json.put("prenom", c.getPrenom());
+        client_json.put("email", c.getEmail());
+        client_json.put("tel", c.getEmail());
+        client_json.put("ville", c.getVille());
+        client_json.put("adresse", c.getAdresse());
+        client_json.put("cp", c.getCp());
+        client_json.put("adresseLn", c.getAdresse_ln());
+
+        return client_json;
+    }
+
 
 }
