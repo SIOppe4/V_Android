@@ -17,7 +17,8 @@ import org.json.JSONObject;
  */
 
 public abstract class API  {
-    static String url = "http://172.20.10.2:8000/";
+    static String url = "http://tobat.cleverapps.io/";
+    static String apiKey = "a46c7c91-2b3c-4392-915e-e2a548b9ed49";
     static RequestQueue requestQueue = null;
 
     public abstract void receptData(JSONObject datas);
@@ -34,7 +35,7 @@ public abstract class API  {
 
     public API(String prefixUrl, int method, JSONObject jsonToSend){
 
-        String url = API.url + prefixUrl;
+        String url = API.url + prefixUrl + "?key=" + API.apiKey;
 
         Log.i("API-url", API.url + prefixUrl);
 
