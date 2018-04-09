@@ -101,11 +101,8 @@ public class ClientActivity extends AppCompatActivity {
         tel.setText(client.getTel());
 
         TextView adresse = (TextView) findViewById(R.id.adresse_client);
-        adresse.setText(client.getAdresse());
-
-        TextView adresse_ln = (TextView) findViewById(R.id.adresse_client_ln);
-        adresse_ln.setText(client.getAdresse_ln());
-
+        adresse.setText(client.getAdresse() + "\n" + client.getAdresse_ln() + "\n" + client.getCp() + " " + client.getVille());
+        
         TextView commentaire = (TextView) findViewById(R.id.commentaire_client);
         commentaire.setText(client.getCommentaire());
 

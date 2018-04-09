@@ -209,7 +209,7 @@ public class ClientManager {
         client_json.put("nom", c.getNom());
         client_json.put("prenom", c.getPrenom());
         client_json.put("email", c.getEmail());
-        client_json.put("tel", c.getEmail());
+        client_json.put("tel", c.getTel());
         client_json.put("ville", c.getVille());
         client_json.put("adresse", c.getAdresse());
         client_json.put("cp", c.getCp());
