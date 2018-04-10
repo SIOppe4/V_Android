@@ -52,18 +52,14 @@ public class BateauManager {
 
                             bateau = new Bateau(id, annee_bat, dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat, img_bat);
 
-                            Log.i("CHARGE", "Bateau " + bateau.getNom());
-
                             bateaux_list.add(bateau);
                         }
 
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.i("Info-Aug", "Erreur ");
+                        Log.i("ERROR", "Erreur de parse JSON");
 
                     }
-
-                    Log.i("SIZE -Bateaux", String.valueOf(bateaux_list.size()));
 
                     manager.getBateaux(bateaux_list);
 

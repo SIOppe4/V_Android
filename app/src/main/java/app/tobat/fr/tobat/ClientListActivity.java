@@ -1,19 +1,14 @@
 package app.tobat.fr.tobat;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,7 +25,6 @@ public class ClientListActivity extends AppCompatActivity {
 
     ClientListAdapter listAdapter;
     ArrayList<Client> clients;
-    String m_Text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,39 +63,6 @@ public class ClientListActivity extends AppCompatActivity {
         startActivity(new Intent(ClientListActivity.this, NewClientActivity.class));
     }
 
-    public void addClients(View v){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Ajout d'un Client");
-
-        // Set up the input
-        final EditText input = new EditText(this);
-        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        // Set up the buttons
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                m_Text = input.getText().toString();
-
-                //clients.add(new Client(m_Text, " "));
-
-                //listAdapter.notifyDataSetChanged();
-            }
-        });
-
-        builder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        builder.show();
-
-    }
 
     public void onResume(){
         this.setClientsList();

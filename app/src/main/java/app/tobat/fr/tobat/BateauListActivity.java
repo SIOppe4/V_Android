@@ -1,29 +1,21 @@
 package app.tobat.fr.tobat;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import app.tobat.fr.tobat.Adapter.BateauListAdapter;
-import app.tobat.fr.tobat.Adapter.ClientListAdapter;
 import app.tobat.fr.tobat.Manager.BateauManager;
-import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Bateau;
-import app.tobat.fr.tobat.Model.Client;
 
 /**
  * Created by Augustin.dlt on 22/03/2018.

@@ -203,9 +203,7 @@ public class ClientActivity extends AppCompatActivity {
 
     }
 
-
     public void goToUpdateClient(View v){
-        Log.i("INFO MAX", "Clicked floating button");
         Intent intent = new Intent (getApplicationContext(), UpdateClientActivity.class);
         intent.putExtra("client",(Serializable) client);
         startActivity(intent);

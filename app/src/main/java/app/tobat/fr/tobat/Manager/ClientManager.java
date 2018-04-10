@@ -39,7 +39,7 @@ public class ClientManager {
 
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.i("Info-Aug", "Erreur ");
+                        Log.i("ERROR", "Erreur de parse JSON ");
 
                     }
 
@@ -64,7 +64,7 @@ public class ClientManager {
                         getClient(JSONObjectToClient(datas));
                     }catch (JSONException e) {
                         e.printStackTrace();
-                        Log.i("Info-Aug", "Erreur ");
+                        Log.i("ERROR", "Erreur de parse JSON ");
                     }
 
                 }
@@ -109,7 +109,7 @@ public class ClientManager {
                             getClient(JSONObjectToClient(datas));
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.i("Info-Aug", "Erreur ");
+                            Log.i("ERROR", "Erreur de parse JSON ");
                         }
                     }
                 };
@@ -139,7 +139,7 @@ public class ClientManager {
                             getClient(JSONObjectToClient(datas));
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.i("Info-Aug", "Erreur ");
+                            Log.i("ERROR", "Erreur de parse JSON ");
                         }
                     }
                 };
@@ -170,14 +170,14 @@ public class ClientManager {
                             getClient(JSONObjectToClient(datas));
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.i("Info-Aug", "Erreur ");
+                            Log.i("ERROR", "Erreur de parse JSON ");
                         }
                     }
                 };
 
             }catch (JSONException e){
                 e.printStackTrace();
-                Log.i("Info-Aug", "Erreur ");
+                Log.i("ERROR", "Erreur de parse JSON ");
             }
 
         }
@@ -224,12 +224,7 @@ public class ClientManager {
                 prix_bat = bateauJson.getString("prix");
                 img_bat = bateauJson.getString("img");
 
-
                 bateau = new Bateau(id_bat, annee_bat, dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat, img_bat);
-
-                Log.i("DATA", String.valueOf(bateauJson));
-
-                Log.i("DATA-Bat", String.valueOf(bateau.getNom()));
 
                 client.addBateau(bateau);
             }

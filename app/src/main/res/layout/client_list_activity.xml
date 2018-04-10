@@ -34,7 +34,7 @@
         android:layout_margin="16dp"
         android:onClick="GoToNewClient"
         app:backgroundTint="@color/startBlue"
-        app:srcCompat="@drawable/ic_edit" />
+        app:srcCompat="@drawable/ic_add" />
 
 
 </android.support.design.widget.CoordinatorLayout>

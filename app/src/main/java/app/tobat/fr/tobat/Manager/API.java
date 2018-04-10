@@ -37,7 +37,7 @@ public abstract class API  {
 
         String url = API.url + prefixUrl + "?key=" + API.apiKey;
 
-        Log.i("API-url", API.url + prefixUrl);
+        Log.i("CONNECT ON", API.url + prefixUrl);
 
         final API api = this;
 
@@ -46,7 +46,7 @@ public abstract class API  {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.i("API", "Api recpection");
+                        Log.i("RESPONSE", "Reception des informations de l'API");
                         api.receptData(response);
                     }
 
@@ -55,7 +55,7 @@ public abstract class API  {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
 
-                Log.i("Info-Aug", "Erreur co");
+                Log.i("ERROR", "Erreur de connexion");
 
             }
         });

@@ -1,27 +1,13 @@
 package app.tobat.fr.tobat;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-
-import app.tobat.fr.tobat.Adapter.ClientBateauxListAdapter;
-import app.tobat.fr.tobat.Manager.BateauManager;
-import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Bateau;
-import app.tobat.fr.tobat.Model.Client;
 
 /**
  * Created by Augustin.dlt on 22/03/2018.
