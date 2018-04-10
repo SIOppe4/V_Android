@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 import app.tobat.fr.tobat.Manager.ClientManager;
 import app.tobat.fr.tobat.Model.Client;
 
@@ -32,9 +34,11 @@ public class NewClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_new);
         setTitle("Ajout d'un client");
-        Intent intent = getIntent();
-        client = (Client)intent.getSerializableExtra("client");
 
+    }
+
+
+    protected void sendNewClient(View v) {
         EditText nom_input = (EditText) findViewById(R.id.nom);
         String nom = String.valueOf(nom_input.getText());
 
@@ -62,10 +66,15 @@ public class NewClientActivity extends AppCompatActivity {
         EditText commentaire_input = (EditText) findViewById(R.id.commentaire);
         String commentaire = String.valueOf(commentaire_input.getText());
 
-        Client c;
-        c = new Client(0 ,nom, prenom, adresse, adresseLn, ville, cp, email, tel, commentaire);
+        Client client = new Client(0, nom,  prenom,  adresse, adresseLn, email, tel, commentaire, ville , cp);
 
-        ClientManager.
-
+        new ClientManager.newClient(client) {
+            @Override
+            protected void getClient(Client c) {
+                Intent intent = new Intent (getApplicationContext(), ClientActivity.class);
+                intent.putExtra("client",(Serializable) c);
+                startActivity(intent);
+            }
+        };
     }
 }

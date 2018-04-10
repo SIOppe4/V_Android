@@ -21,6 +21,7 @@
 
         <activity android:name=".ClientActivity" android:parentActivityName=".ClientListActivity"/>
         <activity android:name=".UpdateClientActivity" android:parentActivityName=".ClientListActivity"/>
+        <activity android:name=".NewClientActivity" android:parentActivityName=".ClientListActivity" />
         <activity android:name=".BateauActivity" android:parentActivityName=".BateauListActivity"/>
         <activity android:name=".BateauListActivity" />
 

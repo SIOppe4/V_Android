@@ -65,8 +65,8 @@ public class ClientListActivity extends AppCompatActivity {
         this.setClientsList();
     };
 
-    public void addClient(View v){
-
+    public void GoToNewClient(View v){
+        startActivity(new Intent(ClientListActivity.this, NewClientActivity.class));
     }
 
     public void addClients(View v){
