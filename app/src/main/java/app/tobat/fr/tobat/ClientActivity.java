@@ -1,5 +1,6 @@
 package app.tobat.fr.tobat;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class ClientActivity extends AppCompatActivity {
     private Client client;
     private ArrayList<Bateau> bateaux_list;
     private AlertDialog.Builder builder_list_bat;
+    private ProgressDialog loadingDialog;
     private CharSequence bateaux_list_char_bat[];
     private ClientBateauxListAdapter bateaux_adapter;
 
@@ -47,6 +49,10 @@ public class ClientActivity extends AppCompatActivity {
         bateaux_list = new ArrayList<Bateau>();
         builder_list_bat = new AlertDialog.Builder(this);
 
+        loadingDialog = new ProgressDialog(this);
+
+        loadingDialog.setMessage("Veuillez patienter...");
+
         putInfoClientToView();
         putInfoBateauxToView();
 
@@ -54,6 +60,7 @@ public class ClientActivity extends AppCompatActivity {
 
     public void showCHooseListBateaux(View v){
 
+        loadingDialog.show();
 
         new BateauManager.all() {
             @Override
@@ -65,23 +72,36 @@ public class ClientActivity extends AppCompatActivity {
                 }
 
                 bateaux_list_char_bat = strs.toArray(new CharSequence[strs.size()]);
-                builder_list_bat.setTitle("Choisir un Bateau");
+                builder_list_bat.setMessage(null).setTitle("Choisir un Bateau");
                 builder_list_bat.setItems(bateaux_list_char_bat, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        new ClientManager.addBateauToClient(client, b.get(which)) {
-                            @Override
-                            protected void getClient(Client c) {
-                                client.addBateau(c.getBateaux().get(c.getBateaux().size()-1));
-                                bateaux_adapter.notifyDataSetChanged();
-                            }
-                        };
+                        Bateau bateau =  b.get(which);
+
+                        if (client.getBateaux().size() < 3 && !client.isBateauPresent(bateau.getId())){
+
+                            loadingDialog.show();
+
+                            new ClientManager.addBateauToClient(client, bateau) {
+                                @Override
+                                protected void getClient(Client c) {
+                                    client.addBateau(c.getBateaux().get(c.getBateaux().size()-1));
+                                    bateaux_adapter.notifyDataSetChanged();
+                                    loadingDialog.hide();
+                                }
+                            };
+                        }else if(client.isBateauPresent(bateau.getId())){
+                            builder_list_bat.setTitle("Une erreur est survenue").setMessage("Le bateau est déjà attribué au client").show();
+                        }else if(client.getBateaux().size() >= 3){
+                            builder_list_bat.setTitle("Une erreur est survenue").setMessage("Le client ne peut choisir plus de trois bateaux").show();
+                        }
 
                     }
                 });
 
                 AlertDialog alert = builder_list_bat.create();
+                loadingDialog.hide();
                 alert.show();
             }
         };
@@ -123,7 +143,7 @@ public class ClientActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
                 builder_list_bat.setTitle("Que voulez vous faire ?");
-                builder_list_bat.setItems(new String[]{
+                builder_list_bat.setMessage(null).setItems(new String[]{
                         "Enlever le bateau",
                         "Consulter le bateau",
                         "Annuler"},
@@ -133,11 +153,15 @@ public class ClientActivity extends AppCompatActivity {
 
                                 // Enlever le Bateau a été selectionné
                                 if (which == 0){
+
+                                    loadingDialog.show();
+
                                     new ClientManager.removeBateauToClient(client, client.getBateaux().get(position)) {
                                         @Override
                                         protected void supressionTermine() {
                                             client.getBateaux().remove(position);
                                             bateaux_adapter.notifyDataSetChanged();
+                                            loadingDialog.hide();
                                         }
                                     };
                                 }
@@ -182,11 +206,14 @@ public class ClientActivity extends AppCompatActivity {
 
                 String commentaire = input.getText().toString();
 
+                loadingDialog.show();
+
                 new ClientManager.updateCommentaire(client, commentaire) {
                     @Override
                     protected void getClient(Client c) {
                         client.setCommentaire(c.getCommentaire());
                         putInfoClientToView();
+                        loadingDialog.hide();
                     }
                 };
 

@@ -119,4 +119,14 @@ public class Client implements Serializable {
     public void setAdresse_ln(String adresse_ln) {
         this.adresse_ln = adresse_ln;
     }
+
+    public boolean isBateauPresent(int id){
+        Boolean isPresent = false;
+        for(Bateau bateau : bateaux) {
+            if (bateau.getId() == id) {
+               isPresent = true;
+            }
+        }
+        return isPresent;
+    }
 }

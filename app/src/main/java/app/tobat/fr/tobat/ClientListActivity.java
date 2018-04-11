@@ -1,5 +1,6 @@
 package app.tobat.fr.tobat;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class ClientListActivity extends AppCompatActivity {
 
     ClientListAdapter listAdapter;
     ArrayList<Client> clients;
+    ProgressDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,10 @@ public class ClientListActivity extends AppCompatActivity {
             }
         });
 
+        loadingDialog = new ProgressDialog(this);
+
+        loadingDialog.setMessage("Veuillez patienter...");
+
         this.setClientsList();
     };
 
@@ -71,12 +77,15 @@ public class ClientListActivity extends AppCompatActivity {
 
     private void setClientsList(){
 
+        loadingDialog.show();
+
         new ClientManager.all() {
             @Override
             protected void getClients(ArrayList<Client> c) {
                 clients.clear();
                 clients.addAll(c);
                 listAdapter.notifyDataSetChanged();
+                loadingDialog.hide();
             }
         };
     }
