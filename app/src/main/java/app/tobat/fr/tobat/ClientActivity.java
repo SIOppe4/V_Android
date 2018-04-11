@@ -52,7 +52,7 @@ public class ClientActivity extends AppCompatActivity {
 
     }
 
-    protected void showCHooseListBateaux(View v){
+    public void showCHooseListBateaux(View v){
 
 
         new BateauManager.all() {
@@ -81,7 +81,8 @@ public class ClientActivity extends AppCompatActivity {
                     }
                 });
 
-                builder_list_bat.show();
+                AlertDialog alert = builder_list_bat.create();
+                alert.show();
             }
         };
 
@@ -163,7 +164,7 @@ public class ClientActivity extends AppCompatActivity {
 
     }
 
-    protected void changeCommentToClient(View v){
+    public void changeCommentToClient(View v){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         LayoutInflater factory = LayoutInflater.from(this);
