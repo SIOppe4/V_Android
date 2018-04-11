@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -66,7 +67,13 @@ public class NewClientActivity extends AppCompatActivity {
         EditText commentaire_input = (EditText) findViewById(R.id.commentaire);
         String commentaire = String.valueOf(commentaire_input.getText());
 
-        Client client = new Client(0, nom,  prenom,  adresse, adresseLn, email, tel, commentaire, ville , cp);
+        if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || tel.isEmpty() || adresse.isEmpty() || cp.isEmpty() || ville.isEmpty()){
+            Toast.makeText(NewClientActivity.this, "Merci de remplir les champs", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Client client = new Client(0, nom,  prenom,  adresse, adresseLn, email, tel, commentaire, ville , cp);
+        }
+
 
         new ClientManager.newClient(client) {
             @Override
