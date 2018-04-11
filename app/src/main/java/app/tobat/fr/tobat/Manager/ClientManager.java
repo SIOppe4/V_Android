@@ -186,6 +186,25 @@ public class ClientManager {
 
     }
 
+    public abstract static class removeClient{
+
+        public removeClient(Client c){
+
+            new API("client/" + c.getId() + "/delete", Request.Method.GET, null) {
+                @Override
+                public void receptData(JSONObject datas) {
+
+                    supressionClientTermine();
+
+                }
+            };
+
+        }
+
+        protected abstract void supressionClientTermine();
+
+    }
+
     static Client JSONObjectToClient(JSONObject client_json) throws JSONException {
 
         Client client;

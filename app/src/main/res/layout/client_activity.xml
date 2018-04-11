@@ -6,10 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grayLight">
+        android:background="@color/grayLight"
+        android:orientation="vertical"
+        app:layout_anchorGravity="left|top">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,51 +24,50 @@
                 android:background="@drawable/gradient_bckg"
                 android:orientation="vertical">
 
+
                 <ImageView
-                    android:layout_marginTop="25dp"
-                    android:layout_gravity="center"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
+                    android:layout_gravity="center"
                     android:layout_marginBottom="45dp"
-                    app:srcCompat="@drawable/ic_client"
-                    />
+                    android:layout_marginTop="25dp"
+                    app:srcCompat="@drawable/ic_client" />
 
 
             </LinearLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="130dp"
                 android:layout_marginBottom="12dp"
-                >
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="130dp">
+
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="360dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/prenom_client"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Augustin"
+                        android:layout_gravity="center"
                         android:paddingTop="9dp"
-                        android:textSize="20dp"
-                        />
+                        android:text="Augustin"
+                        android:textSize="20dp" />
+
                     <TextView
                         android:id="@+id/nom_client"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" DE LATROLLIERE"
-                        android:textStyle="bold"
-                        android:textColor="@color/startBlue"
+                        android:layout_gravity="center"
                         android:paddingBottom="10dp"
+                        android:text=" DE LATROLLIERE"
+                        android:textColor="@color/startBlue"
                         android:textSize="20dp"
-                        />
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -95,15 +96,15 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_email"/>
+                        app:srcCompat="@drawable/ic_email" />
 
                     <TextView
                         android:id="@+id/email_client"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:paddingLeft="12dp"
-                        android:text="augustin.dlt@gmail.com"/>
+                        android:text="augustin.dlt@gmail.com" />
                 </LinearLayout>
 
                 <!-- Téléphone -->
@@ -118,15 +119,15 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_phone"/>
+                        android:src="@drawable/ic_phone" />
 
                     <TextView
                         android:id="@+id/tel_client"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:paddingLeft="12dp"
-                        android:text="+33 7 83 34 78 19"/>
+                        android:text="+33 7 83 34 78 19" />
                 </LinearLayout>
 
                 <!-- Adresse -->
@@ -141,20 +142,21 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_contacts"/>
+                        app:srcCompat="@drawable/ic_contacts" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/adresse_client"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:lines="3"
                             android:paddingLeft="12dp"
-                            android:text="12 rue des petites Poires "/>
+                            android:text="12 rue des petites Poires " />
 
                     </LinearLayout>
 
@@ -173,16 +175,16 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_comment"/>
+                        app:srcCompat="@drawable/ic_comment" />
 
                     <TextView
                         android:id="@+id/commentaire_client"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="changeCommentToClient"
                         android:paddingLeft="12dp"
-                        android:text="Lorem Ipsum"
-                        android:onClick="changeCommentToClient"/>
+                        android:text="Lorem Ipsum" />
                 </LinearLayout>
 
                 <!-- Les Bateaux -->
@@ -197,44 +199,43 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Les Bateaux"
-                        android:textStyle="bold"
-                        android:textSize="20dp"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
 
                 <GridView
                     android:id="@+id/client_bateaux_list"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="30dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:numColumns="3"
-                    android:verticalSpacing="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
                     android:horizontalSpacing="17dp"
-                    android:stretchMode="columnWidth"
                     android:listSelector="@android:color/transparent"
-                    android:gravity="center"/>
+                    android:numColumns="3"
+                    android:paddingBottom="30dp"
+                    android:paddingTop="12dp"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="1dp" />
 
 
                 <LinearLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <Button
                         android:id="@+id/add_ship_btn"
                         android:layout_width="match_parent"
-                        android:background="@color/colorPrimaryDark"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:textColor="#fff"
-                        android:text="Ajouter un Bateau"
-                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorPrimaryDark"
                         android:onClick="showCHooseListBateaux"
-                        />
+                        android:text="Ajouter un Bateau"
+                        android:textColor="#fff" />
 
                 </LinearLayout>
 
