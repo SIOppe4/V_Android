@@ -1,5 +1,8 @@
 package app.tobat.fr.tobat;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -106,4 +109,41 @@ public class UpdateClientActivity extends AppCompatActivity{
             envoyerValeurs();
         }
     }
+
+    public void deleteClient(View v) {
+        Dialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Voulez-vous supprimer le client ?");
+        builder.setCancelable(false);
+        builder.setTitle("Confirmation");
+
+        builder.setPositiveButton("OUI",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // effacement du client;
+                        new ClientManager.removeClient(client) {
+                            @Override
+                            protected void supressionClientTermine() {
+
+                            }
+
+                        };
+                        Intent intent = new Intent (getApplicationContext(), ClientListActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        builder.setNegativeButton("NON",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
+
 }
