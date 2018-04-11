@@ -72,16 +72,18 @@ public class NewClientActivity extends AppCompatActivity {
         }
         else {
             Client client = new Client(0, nom,  prenom,  adresse, adresseLn, email, tel, commentaire, ville , cp);
+            
+            new ClientManager.newClient(client) {
+                @Override
+                protected void getClient(Client c) {
+                    Intent intent = new Intent (getApplicationContext(), ClientActivity.class);
+                    intent.putExtra("client",(Serializable) c);
+                    startActivity(intent);
+                }
+            };
         }
 
 
-        new ClientManager.newClient(client) {
-            @Override
-            protected void getClient(Client c) {
-                Intent intent = new Intent (getApplicationContext(), ClientActivity.class);
-                intent.putExtra("client",(Serializable) c);
-                startActivity(intent);
-            }
-        };
+
     }
 }
