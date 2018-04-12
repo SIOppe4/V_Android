@@ -39,7 +39,7 @@ public class NewClientActivity extends AppCompatActivity {
     }
 
 
-    protected void sendNewClient(View v) {
+    public void sendNewClient(View v) {
         EditText nom_input = (EditText) findViewById(R.id.nom);
         String nom = String.valueOf(nom_input.getText());
 
