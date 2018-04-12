@@ -6,6 +6,10 @@ import java.io.Serializable;
  * Created by Augustin.dlt on 29/03/2018.
  */
 
+/*
+* update by Anthony
+ */
+
 public class Bateau implements Serializable {
     private int id;
     private int annee;
@@ -90,4 +94,6 @@ public class Bateau implements Serializable {
     public void setImg(String img) {
         this.img = img;
     }
+
+
 }

@@ -1,6 +1,5 @@
 package app.tobat.fr.tobat;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +25,6 @@ public class BateauListActivity extends AppCompatActivity {
 
     BateauListAdapter listAdapter;
     ArrayList<Bateau> bateaux;
-    private ProgressDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +56,6 @@ public class BateauListActivity extends AppCompatActivity {
             }
         });
 
-        loadingDialog = new ProgressDialog(this);
-
-        loadingDialog.setMessage("Veuillez patienter...");
-
         this.setBateauxList();
     };
 
@@ -74,15 +68,12 @@ public class BateauListActivity extends AppCompatActivity {
 
     private void setBateauxList(){
 
-        loadingDialog.show();
-
         new BateauManager.all() {
             @Override
             protected void getBateaux(ArrayList<Bateau> b) {
                 bateaux.clear();
                 bateaux.addAll(b);
                 listAdapter.notifyDataSetChanged();
-                loadingDialog.hide();
             }
         };
     }
