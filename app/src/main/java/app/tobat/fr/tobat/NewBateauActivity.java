@@ -37,7 +37,7 @@ public class NewBateauActivity extends AppCompatActivity {
         String nom_bat = String.valueOf(nom_input.getText());
 
         EditText date_input = (EditText) findViewById(R.id.date);
-        int  annee_bat = int.valueOf(date_input.getText());
+        int  annee_bat = Integer.parseInt(String.valueOf(date_input.getText()));
 
         EditText mesure_input = (EditText) findViewById(R.id.mesure);
         String dimentions_bat = String.valueOf(mesure_input.getText());
@@ -45,13 +45,23 @@ public class NewBateauActivity extends AppCompatActivity {
         EditText prix_input = (EditText) findViewById(R.id.prix);
         String  prix_bat = String.valueOf(prix_input.getText());
 
-        Bateau bateau = new Bateau(0, nom_bat, annee_bat, dimentions_bat, prix_bat);
+        EditText etat_input = (EditText) findViewById(R.id.etat);
+        String etat_bat = String.valueOf(etat_input.getText());
+
+        EditText modele_input = (EditText) findViewById(R.id.modele);
+        String modele_bat = String.valueOf(modele_input.getText());
+
+        EditText img_input = (EditText) findViewById(R.id.img);
+        String img_bat = String.valueOf(img_input.getText());
+
+
+        final Bateau bateau = new Bateau(0, annee_bat, dimentions_bat, etat_bat, modele_bat, nom_bat, prix_bat, img_bat);
 
         new BateauManager.newBateau(bateau) {
             @Override
-            protected void getBateaux(Client c) {
+            protected void getBateaux(Bateau b) {
                 Intent intent = new Intent (getApplicationContext(), BateauActivity.class);
-                intent.putExtra("bateau",(Serializable) b);
+                intent.putExtra("bateau",(Serializable) bateau);
                 startActivity(intent);
             }
         };

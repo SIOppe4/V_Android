@@ -93,4 +93,8 @@ public class BateauListActivity extends AppCompatActivity {
         return true;
     }
 
+    public void GoToNewBateau(View v){
+        startActivity(new Intent(BateauListActivity.this, NewBateauActivity.class));
+    }
+
 }
